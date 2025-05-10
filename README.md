@@ -33,14 +33,6 @@ Make sure the following tools are installed on your system:
    chmod +x Xss.sh
 
 
-When prompted, enter the target URL you want to test. For example:
-
-nginx
-Copy
-Edit
-Enter target URL (e.g. https://example.com/search?q=): https://example.com/search?q=
-The script will automatically begin testing the target URL for potential XSS vulnerabilities by sending different payloads.
-
 XSS Payloads
 The script includes a wide variety of XSS payloads, such as:
 
@@ -55,11 +47,14 @@ And more...
 These payloads will be URL-encoded and appended to the target URL to test for reflected XSS vulnerabilities.
 
 How It Works
-URL-based Testing: The script first appends each XSS payload to the target URL and sends the request. It checks if the payload is reflected in the response.
+URL-based Testing
+The script first appends each XSS payload to the target URL and sends the request. It checks if the payload is reflected in the response.
 
-Form Input Testing: The script will also parse the HTML of the target page to find input parameters (like those inside <input>, <textarea>, and <select> tags). It then injects the payloads into those parameters and checks for reflections.
+Form Input Testing
+The script will also parse the HTML of the target page to find input parameters (like those inside <input>, <textarea>, and <select> tags). It then injects the payloads into those parameters and checks for reflections.
 
-Reporting: After each test, the script outputs whether the payload was reflected in the response, indicating a potential XSS vulnerability.
+Reporting
+After each test, the script outputs whether the payload was reflected in the response, indicating a potential XSS vulnerability.
 
 Example Output
 bash
@@ -79,8 +74,8 @@ Edit
 
 ✅ Not reflected.
 Notes
-This script is for educational purposes only. It should only be used on websites you own or have permission to test. Unauthorized testing of websites can lead to legal consequences.
+Educational Use Only: This script should only be used on websites you own or have permission to test. Unauthorized testing of websites can lead to legal consequences.
 
-The script does not test for stored XSS vulnerabilities (e.g., those that are stored in databases) but only for reflected XSS.
+Reflective XSS Testing: The script does not test for stored XSS vulnerabilities (e.g., those that are stored in databases) but only for reflected XSS.
 
-Payloads are designed to test the basic reflected XSS, and additional payloads may be added to improve coverage.
+Payloads: The payloads are designed to test basic reflected XSS vulnerabilities. Additional payloads may be added in the future to improve coverage.
